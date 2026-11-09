@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How RamAltman Windows uses Google authorization, local Windows storage, and the memory information included in daily reports.">
+  <title>Privacy policy | RamAltman Windows</title>
+  <style>
+    :root{color-scheme:light;--ink:#172a26;--muted:#52655e;--line:#d6e1da;--paper:#fff;--wash:#f1f5ef;--accent:#246847}*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:820px;margin:54px auto;padding:40px 46px;background:var(--paper);border:1px solid var(--line);border-radius:12px}nav{display:flex;flex-wrap:wrap;gap:22px;font-size:15px;margin-bottom:38px}a{color:var(--accent);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}h1{font-size:clamp(32px,5vw,42px);line-height:1.2;letter-spacing:-.035em}h2{font-size:23px;line-height:1.3;margin-top:34px}.date,footer{color:var(--muted);font-size:15px}li{margin:9px 0}ul{padding-left:24px}code{background:#eef3ef;padding:2px 5px;border-radius:3px;font-size:.9em}footer{border-top:1px solid var(--line);margin-top:36px;padding-top:20px}@media(max-width:600px){main{margin:0;padding:28px 23px;border:0;border-radius:0}nav{gap:18px}body{background:var(--paper)}}
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="privacy.html" aria-current="page">Privacy</a><a href="terms.html">Terms</a></nav>
+  <h1>Privacy policy</h1>
+  <p class="date">RamAltman Windows · Effective November 9, 2026</p>
+  <p>RamAltman Windows is a personal Windows application that sends a memory report from the account you authorize to a recipient you configure. This policy describes the standalone Gmail OAuth implementation and this static information site.</p>
+
+  <h2>Google information and permissions</h2>
+  <p>The Gmail integration requests <code>gmail.send</code>, <code>openid</code>, and <code>email</code>. It uses Google account information to confirm that the verified email address of the account granting consent matches the configured sender. It receives an account identifier, that email address and verification status, the granted permissions, and authorization tokens with expiry information.</p>
+  <p>The application uses these permissions only to identify the authorized sender, maintain that authorization, and send the memory reports you enable. It does not request Gmail inbox, message-reading, or contacts permissions and does not use Google information for advertising, sale, profiling, or model training.</p>
+  <p>RamAltman Windows' use and transfer of information received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+
+  <h2>Information stored on your PC</h2>
+  <ul>
+    <li>Local configuration contains the sender and recipient addresses, optional sender display name, delivery settings, threshold, and local file paths.</li>
+    <li>Google access and refresh tokens, account identity, and expiry information are stored together as Windows DPAPI ciphertext. Decryption is tied to the Windows user and computer that saved them.</li>
+    <li>The Google Desktop OAuth client JSON is kept locally in the application's private folder. It identifies your own Google Cloud OAuth registration.</li>
+    <li>Local usage history records timestamps and memory figures. Local delivery state records the daily delivery outcome and template rotation. Event logs record timestamps and outcomes.</li>
+  </ul>
+  <p>Default private files stay inside the application's local project folder and are excluded from its Git source. The monitor has no hosted token store or application backend. The Gmail option does not collect or save your Google password. Keep the private folder and any backups under your control.</p>
+
+  <h2>Information sent in reports</h2>
+  <p>When enabled and the configured RAM threshold qualifies, the application submits an email to Google for delivery to your configured recipient. The email contains the sender and recipient addresses, optional sender display name, subject, and a snapshot of total, available, and used physical RAM with its available percentage. If supported, it adds GPU model names and separate VRAM capacity figures.</p>
+  <p>One report is permitted per local calendar day. Delivery to a recipient is the purpose of the application: that recipient and their email provider receive the report. Google processes the authorization and email delivery under its own terms and <a href="https://policies.google.com/privacy">privacy policy</a>. Sent messages and recipient copies may remain with their respective email services.</p>
+
+  <h2>Retention, disabling, and removing access</h2>
+  <p>Run <code>Disable.cmd</code> to stop automatic monitoring and delivery. Disabling retains your local settings, encrypted authorization, and history so that you can enable the monitor later. Local logs are bounded by the application's retention limits; settings, tokens, and the latest delivery state remain until you replace or remove them.</p>
+  <p>To remove Google permission, first disable the monitor, then remove its access from <a href="https://myaccount.google.com/connections">Google Account connections</a>. To remove local data, delete the configured token file and other files in the local private folder after the monitor is stopped. Local deletion does not delete emails already sent or copies retained by Google, recipients, or backups you maintain.</p>
+
+  <h2>This information site</h2>
+  <p>These static pages contain no analytics scripts, advertising, forms, or application sign-in. They do not receive Google authorization callbacks or tokens. If published through GitHub Pages, GitHub processes website requests and logs visitor IP addresses for security under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. Following an external link takes you to that provider's service.</p>
+
+  <h2>Questions and changes</h2>
+  <p>Source and support are available at <a href="https://github.com/Slyrae/ram-altman">github.com/Slyrae/ram-altman</a>. Use the repository's support channel, without posting private configuration or authorization files. Material changes to the application's data practices should be reflected in this policy and its effective date.</p>
+  <footer><a href="index.html">RamAltman Windows</a> · <a href="terms.html">Terms of use</a></footer>
+</main>
+</body>
+</html>
