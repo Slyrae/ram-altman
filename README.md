@@ -1,3 +1,19 @@
+# RamAltman for Windows
+
+Native Windows fork: **[Windows setup and usage](WINDOWS.md)**.
+
+Double-click `Status.cmd` for memory and on/off status, `Preview.cmd` for an email preview, or `Setup.cmd` to connect Gmail. Use `Enable.cmd` and `Disable.cmd` to control automatic delivery. No WSL, Python, or admin rights needed for the app.
+
+This fork checks every five minutes and sends at most once per local calendar day when **at least 10% of system RAM is available**. Every email leads with the available GiB and percentage; supported NVIDIA VRAM is included separately. Standalone Gmail OAuth uses browser consent and a Windows DPAPI-encrypted token, with no Google password stored. Optional SMTP remains available. See [Google setup](GOOGLE-SETUP.md).
+
+Disable stops and disables the owned scheduled task, blocks manual delivery, and verifies that its monitoring process tree has exited. No custom Windows service, tray app, or resident daemon is installed.
+
+Windows fork: [Slyrae/ram-altman](https://github.com/Slyrae/ram-altman), branch `windows-native`. Upstream history, Bash scripts, and license are preserved. See [verification results](validation/ACCEPTANCE.md) and the [application information and privacy pages](https://slyrae.github.io/ram-altman/).
+
+---
+
+## Original upstream README
+
 # Ram-Altman
 
 **A bash script that writes to Sam Altman once a day to report the RAM he missed.**

@@ -26,7 +26,7 @@
     <li>Local configuration contains the sender and recipient addresses, optional sender display name, delivery settings, threshold, and local file paths.</li>
     <li>Google access and refresh tokens, account identity, and expiry information are stored together as Windows DPAPI ciphertext. Decryption is tied to the Windows user and computer that saved them.</li>
     <li>The Google Desktop OAuth client JSON is kept locally in the application's private folder. It identifies your own Google Cloud OAuth registration.</li>
-    <li>Local usage history records timestamps and memory figures. Local delivery state records the daily delivery outcome and template rotation. Event logs record timestamps and outcomes.</li>
+    <li>Local usage history records timestamps and memory figures. Local delivery state records the daily outcome, template rotation, and latest delivery receipt, including sender, recipient, subject, RAM figures, a body hash, and Gmail message identifiers when available. Event logs record timestamps and outcomes.</li>
   </ul>
   <p>Default private files stay inside the application's local project folder and are excluded from its Git source. The monitor has no hosted token store or application backend. The Gmail option does not collect or save your Google password. Keep the private folder and any backups under your control.</p>
 

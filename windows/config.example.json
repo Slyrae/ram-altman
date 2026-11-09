@@ -1,0 +1,16 @@
+{
+  "DeliveryMethod": "GmailOAuth",
+  "Enabled": false,
+  "Recipient": "recipient@example.com",
+  "Sender": "you@example.com",
+  "SenderName": "A concerned RAM owner",
+  "ThresholdPercent": 10,
+  "SmtpHost": "smtp.example.com",
+  "SmtpPort": 587,
+  "UseSsl": true,
+  "CredentialPath": "smtp.credential.xml",
+  "GmailClientPath": "gmail-client.json",
+  "GmailTokenPath": "gmail.token.xml",
+  "StateDirectory": "state",
+  "TimeoutSeconds": 30
+}

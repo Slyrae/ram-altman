@@ -1,0 +1,5 @@
+# Keep qualified source/evidence bytes stable under Windows core.autocrlf.
+/windows/** -text whitespace=cr-at-eol
+/tests/** -text whitespace=cr-at-eol
+/validation/** -text whitespace=cr-at-eol
+/*.cmd -text whitespace=cr-at-eol

@@ -1,0 +1,7 @@
+/private/
+/deliverables/
+/validation/runtime-*/
+/validation/*-fixtures-*/
+/validation/debug-*
+__pycache__/
+*.tmp
