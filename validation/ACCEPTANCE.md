@@ -21,7 +21,15 @@ The Gmail tests mock Google endpoints and browser launch while exercising a real
 
 ## Live account qualification
 
-Real account and delivery qualification is in progress. The local check results above do not by themselves establish delivery to a real inbox, long-term Google token validity, or behavior on every Windows installation. A live qualification should confirm authorized sender identity, a matching sent-message receipt, scheduled delivery, suppression of a second daily report, and complete off/on control. Machine and account details from that process remain private.
+Actual Gmail operation has been verified locally:
+
+- Browser authorization confirmed the configured sender, and OAuth access-token refresh succeeded.
+- A natural scheduled monitor run submitted a report successfully. The sender's Gmail Sent record and the local body hash independently matched the delivery receipt.
+- A self-addressed report using the final email copy was independently observed in both Gmail Sent and Inbox.
+- A later natural scheduled check suppressed another report for the same day; the existing production delivery receipt remained unchanged.
+- Complete OFF stopped and disabled the owned task, left no owned monitoring processes, and preserved delivery state during observation. Turning the monitor back ON restored the configured task.
+
+The associated receipts, account information, message identifiers, machine measurements, and screenshots remain private. Provider acceptance and a Sent record establish submission; they do not establish delivery to a recipient's inbox. The self-addressed Inbox observation is a separate check.
 
 ## Relevant behavior
 
